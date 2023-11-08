@@ -5,7 +5,7 @@ interface NavItem{
 }
 
 export default function Nav(){
-    const [isActive, setIsActive] = useState(-1);
+    const [isActive, setIsActive] = useState<number>(-1);
     const [menuList, setMenuList] = useState<NavItem[]>([]);
     const navRefs = useRef({
         About: React.createRef(),
@@ -25,15 +25,19 @@ export default function Nav(){
         fetchData();
     }, [])
     return (
-        <div className="w-10 h-screen bg-gray-700 fixed z-50 top-0 hidden md:flex">
+        <div className="w-10 h-full bg-gray-700 fixed z-50 top-0 hidden md:flex">
             <ul>
                 {
                     menuList.map((e,i)=>{
                         return (
                             <li key={i} 
-                                className={`w-24 h-12 p-2 mt-5 border-double rounded-5 cursor-pointer box-border bg-white ${isActive === i ? 'border-white' : 'border-red-500'}`} 
-                                onClick={()=>{setIsActive(i); navRefs[e.title].current.scrollIntoView({ behavior: 'smooth' }); }}>
-                                <p className="inline-block">{e.title}</p>
+                                className={`w-25 h-12.5 p-0.5 mt-5 border-2 rounded-md cursor-pointer box-border bg-white ${isActive === i ? 'border-white' : 'border-red-500'}`} 
+                                onClick={()=>{setIsActive(i); 
+                                // navRefs[e.title].current.scrollIntoView({ behavior:'smooth'}); 
+                                }}>
+                                <div className={`border border-red-500 p-2 ${isActive === i ? 'border-white' : ''}`}>
+                                    <p className={`inline-block  ${isActive === i ? 'bg-gradient-to-t-40' : 'bg-white'}`}>{e.title}</p>
+                                </div>
                             </li>
                         )
                     })
