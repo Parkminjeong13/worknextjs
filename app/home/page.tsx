@@ -7,7 +7,7 @@ export default function Home(){
                 <div className="flex mx-auto w-9/10 md:w-3/4">
                     <span className="text-base w-1/5 text-right border-b-2 border-red-500 ml-auto md:text-xl md:w-2/12 lg:w-1/10 lg:text-2xl">ㅁㅈ</span>
                 </div>
-                <div className={`grid grid-cols-10 gap-y-2.5 mx-auto mt-5 mb-20 overflow-hidden text-center bg-white border-red-500 border-2 py-[1.5%] shadow-[sm shadow-red-500] md:w-4/5 md:grid-cols-15 lg:w-3/4 lg:grid-cols-20`}>
+                <div className={`grid grid-cols-10 gap-y-2 mx-auto mt-5 mb-20 overflow-hidden text-center bg-white border-red-500 border-2 py-[1.5%] shadow-[sm shadow-red-500] md:w-4/5 md:grid-cols-15 lg:w-3/4 lg:grid-cols-20`}>
                     <HomeComponent />
                 </div>
             </div>
