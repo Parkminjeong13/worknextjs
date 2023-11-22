@@ -20,7 +20,7 @@ export default function Home(){
                         }
                     });
                     return (
-                        <div className={`aspect-square flex justify-center items-center shadow-sm shadow-red-500`} key={`${rowIndex}-${colIndex}`}>
+                        <div className={`aspect-square flex justify-center items-center min-h-fit shadow-[0_0_0_1px_#d12e2e] text-[4vw] md:text-[3vw] lg:text-[2vw] ${rowIndex * columns.length + colIndex >= 150 ? "md:hidden lg:flex" : "md:flex"} lg:text-[4vw] ${rowIndex * columns.length + colIndex >= 100 ? "hidden" : "flex"}`} key={`${rowIndex}-${colIndex}`}>
                             {content}
                         </div>
                     )
